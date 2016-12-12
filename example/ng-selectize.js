@@ -90,9 +90,6 @@
         }
 
         function setSelectizeValue(value) {
-            if(value === undefined){
-                return;
-            }
           timeout(function() {
             var values = parseValues(value);
 
@@ -102,7 +99,7 @@
 
             changing = true;
 
-            selectize.setValue(values);
+            selectize.setValue(values, true);
             storeInvalidValues(values, parseValues(selectize.getValue()));
 
             changing = false;
